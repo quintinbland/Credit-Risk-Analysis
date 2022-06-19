@@ -1,15 +1,24 @@
 # Credit-Risk-Analysis
 
 ## Overview of the Analysis
-   The purpose of this analysis is to develop a machine learning model that effectively predicts high risk loans.
-    The model is trained with historical loan data including loan size, interest rate, borrower income, debt to income ratio, number of accounts, derogatory marks, total debt and current loan status. Our model uses current loan status as the label to classify high risk loans.  
-    During initial examination of the dataset, using 'value_counts', it was found the data consisted of 75036 loans with a status of 0 (non-risk loan) and 2500 loans with a status of 1 (high risk loan). Since the historical dataset had labels, a supervised learning approach was used for analysis.
-    Analysis began with data preparation. After retrieving the data a DataFrame was created for the data features (X) (loan size, interest rate, borrower income, debt to income ratio, number of accounts, derogatory marks, total debt). A seperate DataFrame was made for the labels (y).
-    The data was split into a training set and a testing set. The training dataset includes 75% of the historical data which is used to build and train the model. The remaining 25% of the data is the testing set of used to validate the model.
-    Effectiveness of the model can be assessed by using the trained model to make predictions on the test data. The predictions of the trained model can be compared to the actual values of the test data. The results of this comparison can be analyzed to determine the accuracy and overall effectiveness of the model. 
-    The analysis utilizes sklearn's LogisticRegression method for the first model. The model is trained with the original dataset. The first iteration of the model was found to have a large imbalance between the two classes. It was found that our data has far more non-risky loans (75036) than high risk loans (2500).
-    Due to the large imbalance, an additional iteration of the model is used. For the second model, imblearn's RandomOverSampler method was used. This method randomly over-sampled the class with less values (high-risk loans) to make it the same size as the other class. The result is a larger training dataset with an equal number of high-risk and non-risky loans. 
-    Model performance was evaluated by calculating the accuracy score, generating a confusion matrix and printing the classification report. This provided key metrics for model analysis such as precision, recall and F1 score.
+
+The purpose of this analysis is to develop a machine learning model that effectively predicts high risk loans.
+   
+The model is trained with historical loan data including loan size, interest rate, borrower income, debt to income ratio, number of accounts, derogatory marks, total debt and current loan status. Our model uses current loan status as the label to classify high risk loans.  
+  
+During initial examination of the dataset, using 'value_counts', it was found the data consisted of 75036 loans with a status of 0 (non-risk loan) and 2500 loans with a status of 1 (high risk loan). Since the historical dataset had labels, a supervised learning approach was used for analysis.
+    
+Analysis began with data preparation. After retrieving the data a DataFrame was created for the data features (X) (loan size, interest rate, borrower income, debt to income ratio, number of accounts, derogatory marks, total debt). A seperate DataFrame was made for the labels (y).
+    
+The data was split into a training set and a testing set. The training dataset includes 75% of the historical data which is used to build and train the model. The remaining 25% of the data is the testing set of used to validate the model.
+    
+Effectiveness of the model can be assessed by using the trained model to make predictions on the test data. The predictions of the trained model can be compared to the actual values of the test data. The results of this comparison can be analyzed to determine the accuracy and overall effectiveness of the model. 
+    
+The analysis utilizes sklearn's LogisticRegression method for the first model. The model is trained with the original dataset. The first iteration of the model was found to have a large imbalance between the two classes. It was found that our data has far more non-risky loans (75036) than high risk loans (2500).
+    
+Due to the large imbalance, an additional iteration of the model is used. For the second model, imblearn's RandomOverSampler method was used. This method randomly over-sampled the class with less values (high-risk loans) to make it the same size as the other class. The result is a larger training dataset with an equal number of high-risk and non-risky loans. 
+    
+Model performance was evaluated by calculating the accuracy score, generating a confusion matrix and printing the classification report. This provided key metrics for model analysis such as precision, recall and F1 score.
 
 ## Results
 
@@ -17,6 +26,7 @@ Description of the balanced accuracy scores and the precision and recall scores 
 
 * Machine Learning Model 1: original dataset with class imabalance.
  - Accuracy Score: 0.952
+ 
   | Class | Precision | Recall |
   |-------|-----------|--------|
   |   0   |  1.00     |  0.99  |
